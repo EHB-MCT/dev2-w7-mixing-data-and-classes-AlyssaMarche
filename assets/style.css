@@ -25,16 +25,25 @@ body {
   border: 1px solid #333;
   float: left;
   padding: 24px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto;
+
+  & > div {
+      text-align: start;
+      display: flex;
+      flex-direction: column;
+
+      &:not(.name) {
+          text-align: end;
+      }
+  }
 }
 form {
   display: grid;
   grid-template-columns: 1fr auto;
 }
 
-img { 
+img {
   width: 300px;
 }
 
@@ -50,7 +59,6 @@ input {
   float: left;
   margin-left: 10px;
 }
-
 
 p {
   display: block;
@@ -78,18 +86,17 @@ p {
   display: block;
 }
 
-
 .gg-bolt {
   box-sizing: border-box;
   position: relative;
   display: block;
-  transform: scale(var(--ggs,1));
+  transform: scale(var(--ggs, 1));
   width: 6px;
-  height: 21px
- }
- 
- .gg-bolt::after,
- .gg-bolt::before {
+  height: 21px;
+}
+
+.gg-bolt::after,
+.gg-bolt::before {
   content: "";
   display: block;
   box-sizing: border-box;
@@ -98,17 +105,17 @@ p {
   height: 0;
   border-left: 3px solid transparent;
   border-right: 3px solid transparent;
-  transform: rotate(30deg)
- }
- 
- .gg-bolt::before {
+  transform: rotate(30deg);
+}
+
+.gg-bolt::before {
   border-bottom: 12px solid;
   left: 0;
-  top: 0
- }
- 
- .gg-bolt::after {
+  top: 0;
+}
+
+.gg-bolt::after {
   border-top: 12px solid;
   right: 0;
-  bottom: 0
- } 
+  bottom: 0;
+}
