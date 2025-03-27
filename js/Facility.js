@@ -1,7 +1,7 @@
 import Plaats from "./Plaats.js";
-export default class Facility {
+export default class Facility extends Plaats {
 	constructor(data, naam, URL, google_maps, address, postalcode, municipality) {
-        super(address, postalcode, municipality)
+        super(address, postalcode, municipality);
 		this._data = data;
 		this._naam = naam;
 		this._URL = URL;
